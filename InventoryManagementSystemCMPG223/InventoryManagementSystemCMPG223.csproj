@@ -71,11 +71,16 @@
     <Content Include="App_Data\InventoryManagementSystemDB_log.ldf">
       <DependentUpon>InventoryManagementSystemDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Specials.mdf" />
+    <Content Include="App_Data\Specials_log.ldf">
+      <DependentUpon>Specials.mdf</DependentUpon>
+    </Content>
     <Content Include="CreateProduct.aspx" />
     <Content Include="DeleteProduct.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="ProductStyles.css" />
+    <Content Include="Specials.aspx" />
     <Content Include="UpdateProduct.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -109,6 +114,13 @@
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specials.aspx.cs">
+      <DependentUpon>Specials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Specials.aspx.designer.cs">
+      <DependentUpon>Specials.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateProduct.aspx.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
