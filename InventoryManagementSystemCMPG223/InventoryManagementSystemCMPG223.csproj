@@ -67,11 +67,127 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Homepage.html" />
+    <Content Include="AddSpecial.aspx" />
+    <Content Include="AddSupplier.aspx" />
+    <Content Include="App_Data\InventoryManagementSystemDB.mdf" />
+    <Content Include="App_Data\InventoryManagementSystemDB_log.ldf">
+      <DependentUpon>InventoryManagementSystemDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Specials.mdf" />
+    <Content Include="App_Data\Specials_log.ldf">
+      <DependentUpon>Specials.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Supplier.mdf" />
+    <Content Include="App_Data\Supplier_log.ldf">
+      <DependentUpon>Supplier.mdf</DependentUpon>
+    </Content>
+    <Content Include="CreateProduct.aspx" />
+    <Content Include="DeleteProduct.aspx" />
+    <Content Include="DeleteSpecial.aspx" />
+    <Content Include="DeleteSupplier.aspx" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="Products.aspx" />
+    <Content Include="ProductStyles.css" />
+    <Content Include="Specials.aspx" />
+    <Content Include="UpdateProduct.aspx" />
+    <Content Include="UpdateSpecial.aspx" />
+    <Content Include="UpdateSupplier.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Suppliers.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSpecial.aspx.cs">
+      <DependentUpon>AddSpecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSpecial.aspx.designer.cs">
+      <DependentUpon>AddSpecial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSupplier.aspx.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSupplier.aspx.designer.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProduct.aspx.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateProduct.aspx.designer.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteProduct.aspx.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteProduct.aspx.designer.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSpecial.aspx.cs">
+      <DependentUpon>DeleteSpecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteSpecial.aspx.designer.cs">
+      <DependentUpon>DeleteSpecial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSupplier.aspx.cs">
+      <DependentUpon>DeleteSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteSupplier.aspx.designer.cs">
+      <DependentUpon>DeleteSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specials.aspx.cs">
+      <DependentUpon>Specials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Specials.aspx.designer.cs">
+      <DependentUpon>Specials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProduct.aspx.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSpecial.aspx.cs">
+      <DependentUpon>UpdateSpecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateSpecial.aspx.designer.cs">
+      <DependentUpon>UpdateSpecial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Suppliers.aspx.cs">
+      <DependentUpon>Suppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers.aspx.designer.cs">
+      <DependentUpon>Suppliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSupplier.aspx.cs">
+      <DependentUpon>UpdateSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateSupplier.aspx.designer.cs">
+      <DependentUpon>UpdateSupplier.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
