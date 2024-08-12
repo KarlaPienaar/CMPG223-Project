@@ -34,13 +34,19 @@ namespace InventoryManagementSystemCMPG223
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            comm = new SqlCommand($"INSERT INTO SpecialsTable(Productid,Discount,StartDate,EndDate) VALUES({int.Parse(txtProductId.Text)},{float.Parse(txtDiscount.Text)},'{DateTime.Parse(txtStartDate.Text)}','{DateTime.Parse(txtEndDate.Text)}')", conn);
-            adap = new SqlDataAdapter();
-            adap.InsertCommand = comm;
+            Response.Redirect("AddSpecial.aspx");
+            
 
-            adap.InsertCommand.ExecuteNonQuery();
-            conn.Close();
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UpdateSpecial.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DeleteSpecial.aspx");
         }
     }
 }
