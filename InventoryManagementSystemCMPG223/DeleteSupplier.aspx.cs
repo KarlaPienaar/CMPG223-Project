@@ -15,6 +15,7 @@ namespace InventoryManagementSystemCMPG223
         public SqlCommand comm;
         public DataSet ds;
         public SqlDataAdapter adap;
+        int i;
         protected void Page_Load(object sender, EventArgs e)
         {
 
