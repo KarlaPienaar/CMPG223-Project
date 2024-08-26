@@ -4,14 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Data;
+using System.Data.SqlClient; //needed
+using System.Data; //needed 
 
 namespace InventoryManagementSystemCMPG223
 {
     public partial class AddSupplier : System.Web.UI.Page
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samantha\Desktop\CMPG223-Project\InventoryManagementSystemCMPG223\App_Data\Supplier.mdf;Integrated Security=True");
+        //Connection String
+        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=InventoryManagementDB;Integrated Security=True");
         public SqlCommand comm;
         public DataSet ds;
         public SqlDataAdapter adap;
@@ -22,15 +23,44 @@ namespace InventoryManagementSystemCMPG223
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            comm = new SqlCommand($"INSERT INTO SuppliersTable(name,email) VALUES('{txtName.Text}','{txtEmail.Text}')", conn);
-            adap = new SqlDataAdapter();
-            adap.InsertCommand = comm;
+            try
+            {
+                //Open Connection to Database
+                conn.Open();
+                adap = new SqlDataAdapter();
 
-            adap.InsertCommand.ExecuteNonQuery();
-            conn.Close();
+                string SupplierEmail = txtEmail.Text;
+                string SupplierName = txtName.Text;
 
-            Response.Redirect("Suppliers.aspx");
+                //Using InsertSupplier procedure
+                comm = new SqlCommand("InsertSupplier", conn);
+                comm.CommandType = CommandType.StoredProcedure;
+
+                comm.Parameters.AddWithValue("@SupplierEmail", SupplierEmail);
+                comm.Parameters.AddWithValue("@SupplierName", SupplierName);
+
+           
+
+                int count = comm.ExecuteNonQuery();
+                if(count > 0)
+                {
+                    //Redirect to suppliers page
+                    Response.Redirect("Suppliers.aspx");
+                }
+                
+
+            }
+            catch (SqlException error)
+            {
+                //Show error when connection to database failed
+                msgError.Text = error.ToString();
+            }
+            finally {
+                //close connection to database
+                conn.Close();
+            }
+
+
         }
     }
 }

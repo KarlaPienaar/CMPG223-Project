@@ -82,7 +82,7 @@
                     <asp:Label ID="lblStartDate" runat="server" Text="Start Date:"></asp:Label>
                 </td>
                 <td class="auto-style9">
-                    <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
+                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
                 </td>
                 <td class="auto-style10"></td>
             </tr>
@@ -91,7 +91,7 @@
                     <asp:Label ID="lblEndDate" runat="server" Text="End Date:"></asp:Label>
                 </td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
+                    <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
 
                 </td>
 

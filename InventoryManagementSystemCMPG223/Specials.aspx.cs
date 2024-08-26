@@ -4,36 +4,45 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Data;
+using System.Data.SqlClient; // needed 
+using System.Data; //needed
 
 namespace InventoryManagementSystemCMPG223
 {
     public partial class Specials : System.Web.UI.Page
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samantha\Desktop\CMPG223-Project\InventoryManagementSystemCMPG223\App_Data\Specials.mdf;Integrated Security=True");
+        //Connection String
+        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=InventoryManagementDB;Integrated Security=True");
         public SqlCommand comm;
         public DataSet ds;
         public SqlDataAdapter adap;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string sql_state = "SELECT * FROM SpecialsTable";
+            string sql_state = "SelectAllSpecials";
+
+            //Connecting to the Database
             conn.Open();
+
             ds = new DataSet();
             adap = new SqlDataAdapter();
 
             comm = new SqlCommand(sql_state, conn);
+            comm.CommandType = CommandType.StoredProcedure;
             adap.SelectCommand = comm;
             adap.Fill(ds);
 
             GridView1.DataSource = ds;
             GridView1.DataBind();
+
+            //Closing Connection to the Database
             conn.Close();
+
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //Redirecting to add specials page
             Response.Redirect("AddSpecial.aspx");
             
 
@@ -41,11 +50,13 @@ namespace InventoryManagementSystemCMPG223
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            //redirecting to update specials page
             Response.Redirect("UpdateSpecial.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            //redirecting to Delete Specials Page
             Response.Redirect("DeleteSpecial.aspx");
         }
     }

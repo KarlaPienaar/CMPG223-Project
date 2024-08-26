@@ -4,18 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Data;
+using System.Data.SqlClient; //needed
+using System.Data; //needed
 
 namespace InventoryManagementSystemCMPG223
 {
     public partial class DeleteSupplier : System.Web.UI.Page
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samantha\Desktop\CMPG223-Project\InventoryManagementSystemCMPG223\App_Data\Supplier.mdf;Integrated Security=True");
+        //connection string
+        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=InventoryManagementDB;Integrated Security=True");
         public SqlCommand comm;
         public DataSet ds;
         public SqlDataAdapter adap;
-        int i;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,12 +24,21 @@ namespace InventoryManagementSystemCMPG223
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //Open connection to database
             conn.Open();
-            string sql = "DELETE FROM SuppliersTable WHERE SupplierId = @id";
+
+            //use DeleteSupplier procedure
+            string sql = "DeleteSupplier";
             comm = new SqlCommand(sql, conn);
-            comm.Parameters.AddWithValue("@id", txtSupplierId.Text);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            comm.Parameters.AddWithValue("@Id", txtSupplierId.Text);
             comm.ExecuteNonQuery();
+
+            //Close connection to database
             conn.Close();
+
+            //Rediect to Suppliers Page 
             Response.Redirect("Suppliers.aspx");
         }
     }

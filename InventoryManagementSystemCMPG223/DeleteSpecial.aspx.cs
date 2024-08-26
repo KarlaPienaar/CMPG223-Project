@@ -4,14 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Data;
+using System.Data.SqlClient; //needed
+using System.Data; //needed
 
 namespace InventoryManagementSystemCMPG223
 {
     public partial class DeleteSpecial : System.Web.UI.Page
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Samantha\Desktop\CMPG223-Project\InventoryManagementSystemCMPG223\App_Data\Specials.mdf;Integrated Security=True");
+        //Connection String
+        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=InventoryManagementDB;Integrated Security=True");
         public SqlCommand comm;
         public DataSet ds;
         public SqlDataAdapter adap;
@@ -22,12 +23,21 @@ namespace InventoryManagementSystemCMPG223
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //Connecting to Database
             conn.Open();
-            string sql ="DELETE FROM SpecialsTable WHERE IdSpecial = @id";
+
+            //call Delete Special procedure
+            string sql ="DeleteSpecial";
             comm = new SqlCommand(sql,conn);
-            comm.Parameters.AddWithValue("@id", int.Parse(txtSpecialId.Text));
+            comm.CommandType = CommandType.StoredProcedure;
+
+            comm.Parameters.AddWithValue("@Id", int.Parse(txtSpecialId.Text));
             comm.ExecuteNonQuery();
+
+            //Close Connection to Database
             conn.Close();
+
+            //Redirect to specials page 
             Response.Redirect("Specials.aspx");
         }
     }

@@ -52,6 +52,7 @@
                     <td>
                         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
                     </td>
+                    <asp:Label ID="msgError" runat="server" Text=""></asp:Label>
                 </tr>
             </table>
         </div>

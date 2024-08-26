@@ -96,13 +96,13 @@ namespace InventoryManagementSystemCMPG223
         protected global::System.Web.UI.WebControls.Label lblStartDate;
 
         /// <summary>
-        /// txtStartDate control.
+        /// Calendar1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStartDate;
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
 
         /// <summary>
         /// lblEndDate control.
@@ -114,13 +114,13 @@ namespace InventoryManagementSystemCMPG223
         protected global::System.Web.UI.WebControls.Label lblEndDate;
 
         /// <summary>
-        /// txtEndDate control.
+        /// Calendar2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndDate;
+        protected global::System.Web.UI.WebControls.Calendar Calendar2;
 
         /// <summary>
         /// btnUpdate control.
