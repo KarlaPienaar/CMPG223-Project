@@ -67,11 +67,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddPage.aspx" />
+    <Content Include="DeletePage.aspx" />
     <Content Include="Homepage.html" />
+    <Content Include="UpdatePage.aspx" />
+    <Content Include="ViewPage.aspx" />
     <Content Include="Web.config" />
+    <Content Include="FirstPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPage.aspx.cs">
+      <DependentUpon>AddPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPage.aspx.designer.cs">
+      <DependentUpon>AddPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePage.aspx.cs">
+      <DependentUpon>DeletePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeletePage.aspx.designer.cs">
+      <DependentUpon>DeletePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FirstPage.aspx.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FirstPage.aspx.designer.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePage.aspx.cs">
+      <DependentUpon>UpdatePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdatePage.aspx.designer.cs">
+      <DependentUpon>UpdatePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage.aspx.cs">
+      <DependentUpon>ViewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPage.aspx.designer.cs">
+      <DependentUpon>ViewPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,6 +121,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web1.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
